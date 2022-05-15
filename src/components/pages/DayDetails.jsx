@@ -30,7 +30,7 @@ const DayDetails = () => {
 
 	return (
 		<MainContainer>
-			<div className="px-6 h-screen w-full text-sm">
+			<div className="px-6 h-screen w-full text-sm mb-20">
 				<Backbutton text1="Fitness" onClick={() => navigate(-1)} text2="Add Data" onClick2={move} />
 				<div className="flex justify-between items-end">
 					<img

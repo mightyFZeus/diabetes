@@ -1,71 +1,55 @@
-import React, { useState } from "react";
+import React from "react";
 import MainContainer from "../container/MainContainer";
-import { useLocation } from "react-router-dom";
 import pan from "../../images/pan.png";
 import can from "../../images/can.png";
 import pizza from "../../images/pizza.png";
 import Backbutton from "../Backbutton";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const NutritionDetails = () => {
-	const location = useLocation();
-	const item = location.state;
+import { newBreakFast } from "../../utils/data";
+
+const ItemAdded = () => {
+
 	const navigate = useNavigate();
-	const [showEdit, setShowEdit] = useState(false);
 
-	console.log(item);
 
-	localStorage.setItem("dataArray", JSON.stringify(item));
 
-	const test = localStorage.getItem("dataArray");
 
-	console.log(JSON.parse(test));
 
 	return (
 		<MainContainer>
 			<div className="px-6 h-screen w-full text-sm mb-20">
 				<Backbutton text1="Home" onClick={() => navigate(-1)} />
 
-				<p className="text-5xl font-bold">{item.title}</p>
+				<p className="text-5xl font-bold">{newBreakFast.title}</p>
 				<img
 					src={
-						item.title === "Breakfast"
+						newBreakFast.title === "Breakfast"
 							? pan
-							: item.title === "Lunch"
+							: newBreakFast.title === "Lunch"
 							? can
 							: pizza
 					}
 					alt="product-mig"
 					className="relative top-36 mb-10"
 				/>
-				<p
-					className="font-bold text-right text-blue-500 my-2"
-					onClick={() => setShowEdit(true)}
-				>
-					Edit
-				</p>
+				
 				<div
 					className={
-						item.title === "Breakfast"
+						newBreakFast.title === "Breakfast"
 							? "rounded-lg p-4 bg-[#F98461] mt-10 flex justify-between items-center text-sm"
-							: item.title === "Lunch"
+							: newBreakFast.title === "Lunch"
 							? "rounded-lg p-4 bg-[#FFD062] mt-10 flex justify-between items-center text-sm"
 							: "rounded-lg p-4 bg-[#B3F4AA] mt-10 flex justify-between items-center text-sm"
 					}
 				>
 					<div className="w-full mt-14">
-						{item.array.map((item, index) => (
+						{newBreakFast.array.map((item, index) => (
 							<div key={index} className="w-full mt-10 ">
 								<p className="font-bold text-xl mb-3">
 									{item.mealName}
 								</p>
-								{showEdit && (
-									<Link to="/change-meal" state={{data:item}}>
-										<p className="relative top-10 font-bold text-white cursor-pointer">
-										-	Change this meal
-										</p>
-									</Link>
-								)}{" "}
+								
 								<div className="flex justify-between w-full">
 									<img
 										src={item.image}
@@ -97,4 +81,4 @@ const NutritionDetails = () => {
 	);
 };
 
-export default NutritionDetails;
+export default ItemAdded;

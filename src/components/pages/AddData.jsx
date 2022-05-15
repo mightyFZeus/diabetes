@@ -37,8 +37,10 @@ const AddData = () => {
 			console.log(step, newDate);
 			setModal(true);
 		} else {
-            e.preventDefault();
-            window.alert('Make sure all fields are filled up before submission')
+			e.preventDefault();
+			window.alert(
+				"Make sure all fields are filled up before submission"
+			);
 		}
 	};
 
@@ -76,7 +78,13 @@ const AddData = () => {
 							placeholder="10,000"
 							value={steps}
 							onChange={(e) => setSteps(e.target.value)}
-							text="Steps"
+							text={
+								item.item.data.id === 1
+									? "Steps"
+									: item.item.data.id === 2
+									? "Cycling"
+									: "Running"
+							}
 						/>
 					</div>
 				</form>

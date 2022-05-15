@@ -12,6 +12,8 @@ import NutritionPlan from "./components/pages/NutritionPlan";
 import DayDetails from "./components/pages/DayDetails";
 import AddData from "./components/pages/AddData";
 import NutritionDetails from "./components/pages/NutritionDetails";
+import ChangeMeal from "./components/pages/ChangeMeal";
+import ItemAdded from "./components/pages/ItemAdded";
 
 // steps
 	 localStorage.setItem("cycleSteps", '10,000')
@@ -43,6 +45,8 @@ function App() {
            <Route path="/day-details" element={<DayDetails />} />
            <Route path="/add-data" element={<AddData />} />
            <Route path="/nutrition-details" element={<NutritionDetails />} />
+           <Route path="/change-meal" element={<ChangeMeal />} />
+           <Route path="/item-added" element={<ItemAdded />} />
         </Routes>
 			</Router>
 		</div>

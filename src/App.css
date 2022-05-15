@@ -3,3 +3,8 @@
 .app{
   font-family: 'Raleway', sans-serif;
 }
+
+
+.checkbox:checked:before{
+background-color:green;
+}
