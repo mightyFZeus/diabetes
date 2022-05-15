@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MainContainer from "../container/MainContainer";
 import { useLocation } from "react-router-dom";
 import pan from "../../images/pan.png";
@@ -13,13 +13,14 @@ const NutritionDetails = () => {
 	const navigate = useNavigate();
 	const [showEdit, setShowEdit] = useState(false);
 
-	console.log(item);
+	console.log(item,'Work');
 
-	localStorage.setItem("dataArray", JSON.stringify(item));
+	
 
-	const test = localStorage.getItem("dataArray");
 
-	console.log(JSON.parse(test));
+
+
+
 
 	return (
 		<MainContainer>
@@ -54,7 +55,7 @@ const NutritionDetails = () => {
 					}
 				>
 					<div className="w-full mt-14">
-						{item.array.map((item, index) => (
+						{item?.mealArray?.map((item, index) => (
 							<div key={index} className="w-full mt-10 ">
 								<p className="font-bold text-xl mb-3">
 									{item.mealName}
@@ -68,7 +69,7 @@ const NutritionDetails = () => {
 								)}{" "}
 								<div className="flex justify-between w-full">
 									<img
-										src={item.image}
+										src={item?.image}
 										alt=""
 										className="block mr-auto"
 									/>

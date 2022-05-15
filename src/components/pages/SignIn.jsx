@@ -17,7 +17,7 @@ const SignIn = () => {
 	};
 
 	const handleSubmit = (e) => {
-		if (email !== "" && password !== "") {
+		if (email ==="annechukwunonye@mail.com" && password === "123456") {
 				e.preventDefault();
 		setModal(true);
 		} else {

@@ -11,6 +11,18 @@ const SignIn = () => {
 	const [password, setPassword] = useState('')
 	const [username, setUsername] = useState('')
 	const [confirmPassword, setConfirmPassword] = useState('')
+
+	const move = (e) => {
+				e.preventDefault();
+
+		if (email !== '' && username !== "" && password !== "" && confirmPassword !== "") {
+		navigate('/ftrness')
+		
+		} else {
+				e.preventDefault();
+            window.alert('Make sure all fields are filled up before submission')
+	}
+	}
 	
 
 
@@ -34,7 +46,7 @@ const SignIn = () => {
 							bgColor="#00B386"
 								textColor="#fff"
 		
-								onClick={() =>navigate("/fitness")}
+								onClick={move}
 						/>
 					</div>
                     </form>

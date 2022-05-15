@@ -1,23 +1,51 @@
 import React, { useState } from "react";
 import { searchResult } from "../../utils/data";
 import MainContainer from "../container/MainContainer";
-import PrimaryButton from '../../components/Buttons/PrimatryButton'
-import {useNavigate, useLocation, Link} from 'react-router-dom'
+import PrimaryButton from "../../components/Buttons/PrimatryButton";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addData } from "../../store/Action";
+
 
 const ChangeMeal = () => {
-  const [value, setValue] = useState("");
+	const dispatch = useDispatch()
+	const [value, setValue] = useState("");
 
-  	const location = useLocation();
-	const item = location.state;
-  
-  const navigate = useNavigate()
+	const [click, setClick] = useState(false)
+
+
+	const navigate = useNavigate();
+
+	const move = () => {
+		if (click) {
+			navigate('/fitness')
+		}
+		
+	}
+
+
+	
+
+
+	
+
+	
+
+	
 
 	return (
 		<MainContainer bg="#F2F2F7">
 			<div className="px-6  w-full text-sm mb-20">
 				<div className="flex justify-between items-center mb-14">
 					<p className="font-bold text-3xl ">Search Meal</p>
-					<p className="cursor-pointer" onClick={() =>{navigate(-1)}}>cancel</p>
+					<p
+						className="cursor-pointer"
+						onClick={() => {
+							navigate(-1);
+						}}
+					>
+						cancel
+					</p>
 				</div>
 				<div className="bg-gray-200 flex  gap-3  rounded-lg border px-2 py-2 ">
 					<svg
@@ -34,7 +62,12 @@ const ChangeMeal = () => {
 							d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
 						/>
 					</svg>
-          <input className="w-full outline-none bg-transparent" placeholder="Search for an item" value={value} onChange={ (e) =>setValue(e.target.value)}/>
+					<input
+						className="w-full outline-none bg-transparent"
+						placeholder="Search for an item"
+						value={value}
+						onChange={(e) => setValue(e.target.value)}
+					/>
 				</div>
 				{/* search result */}
 				{value.length > 3 && (
@@ -42,15 +75,20 @@ const ChangeMeal = () => {
 						{searchResult.map((item, index) => (
 							<>
 								<div
+									onClick={() => {
+										dispatch(addData(item));
+										setClick(true)
+									}}
 									key={index}
 									className=" py-2 items-center flex w-full justify-between"
 								>
+									<img src={item.image} alt="ggggg" />
 									<div className="">
 										<p className="font-semibold text-md mb-2">
-											{item.name}
+											{item.mealName}
 										</p>
 										<p className="text-gray-500">
-											{item.desc}
+											{item?.kcal} / {item?.grams}
 										</p>
 									</div>
 									<input
@@ -62,17 +100,16 @@ const ChangeMeal = () => {
 							</>
 						))}
 					</div>
-        )}
-        
-        <Link to='/item-added' state={{data:item}}>
-          <div className="mt-20">
-							<PrimaryButton
-								text="+ Add item"
-								bgColor="#00B386"
-								textColor="#fff"
-							/>
-						</div>
-        </Link>
+				)}
+
+				<div className="mt-20">
+					<PrimaryButton
+						text="+ Add item"
+						bgColor="#00B386"
+						textColor="#fff"
+						onClick={move}
+					/>
+				</div>
 			</div>
 		</MainContainer>
 	);

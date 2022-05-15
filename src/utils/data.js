@@ -35,7 +35,7 @@ export const nutritionData = [
 
 export const breakFast = {
 	title: "Breakfast",
-	array: [
+	mealArray: [
 		{
 			id: 1,
 			mealName: "Avocado & Eggs/Grilled tomatoes",
@@ -62,7 +62,7 @@ export const breakFast = {
 
 export const lunch = {
 	title: "Lunch",
-	array: [
+	mealArray: [
 		{
 			id: 1,
 			mealName: "Chickpea and tuna salad",
@@ -89,7 +89,7 @@ export const lunch = {
 
 export const dinner = {
 	title: "Dinner",
-	array: [
+	mealArray: [
 		{
 			id: 1,
 			mealName: "Lemon Garlic Salmon",
@@ -115,48 +115,13 @@ export const dinner = {
 };
 
 export const searchResult = [
-	{
-		id: 1,
-		name: "Oatmeal",
-		desc: "145 cals / 1 cup cooked",
-		image: "",
-	},
-	{
-		id: 2,
-		name: "Oatmeal",
-		desc: "87cals / 1 packet(20g)",
-		image: "",
-	},
-	{
-		id: 3,
-		name: "Oatmeal",
-		desc: "380cals / 100g",
-		image: "",
-	},
-	{
-		id: 4,
-		name: "Oatmeal with milk",
-		desc: "70 cals / 1 cup",
-		image: "",
-	},
-	{
-		id: 5,
-		name: "Oatmeal chocolate cookies",
-		desc: "112 cals / 1 big",
-		image: "",
-	},
-	{
-		id: 6,
-		name: "Oatmeal Rasincookies",
-		desc: "90 cals / 1 small",
-		image: "",
-	},
-	{
-		id: 7,
-		name: "Oatmealwith banana",
-		desc: "166cals / 1 cup",
-		image: "",
-	},
+		{
+			id: 3,
+			mealName: "Healthy Sandwich ",
+			kcal: 120,
+			grams: 15,
+			image: wich,
+		}
 ];
 
 

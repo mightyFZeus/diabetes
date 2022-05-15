@@ -14,8 +14,13 @@ import AddData from "./components/pages/AddData";
 import NutritionDetails from "./components/pages/NutritionDetails";
 import ChangeMeal from "./components/pages/ChangeMeal";
 import ItemAdded from "./components/pages/ItemAdded";
+import { breakFast } from './utils/data'
+import {OverProvider} from './components/Context'
+
 
 // steps
+
+localStorage.setItem('dataArray', JSON.stringify(breakFast))
 	 localStorage.setItem("cycleSteps", '10,000')
  localStorage.setItem("weeklySteps", '10,000')
 localStorage.setItem("dailySteps", '10,000')
@@ -30,8 +35,8 @@ localStorage.setItem("dailySteps", '10,000')
 
 function App() {
 	return (
-		<div className="app">
-			<Router>
+      <div className="app">
+            <Router>
         <Routes>
            <Route path="/" element={<Onboard />} />
            <Route path="/action" element={<ActionPrompt />} />
@@ -49,6 +54,7 @@ function App() {
            <Route path="/item-added" element={<ItemAdded />} />
         </Routes>
 			</Router>
+			
 		</div>
 	);
 }

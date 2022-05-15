@@ -1,10 +1,18 @@
-import React from "react";
-import { breakFast, lunch, dinner } from "../utils/data";
+import React, {useEffect, useState} from "react";
+import {  lunch, dinner } from "../utils/data";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const NutritionPlanItem = ({ data }) => {
+	const {breakfast} = useSelector(state =>state)
+	
+	console.log(breakfast, 'eeeeeeeeeeeeeeeeeeeeeee');
+
+
+
+	
 	return (
-		<Link to='/nutrition-details' state={data.id === 1 ?breakFast :data.id === 2?lunch : dinner}>
+		<Link to='/nutrition-details' state={data.id === 1 ?breakfast :data.id === 2?lunch : dinner}>
 			<div
 				className={
 					data.id === 1

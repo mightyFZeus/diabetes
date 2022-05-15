@@ -46,7 +46,7 @@ const ActionPrompt = () => {
 						Or
 					</p>
 
-					<Link to='/signin'>
+					<Link to='/signup'>
 						<div className="my-10">
 							<PrimatryButton
 								text="Create an account"
@@ -59,7 +59,9 @@ const ActionPrompt = () => {
 						<p className="mt-4 text-center">
 							Already have an account?{" "}
 							<span className="font-bold text-backBlue">
-								Sign in
+								<Link to='/signin'>
+									Sign in
+								</Link>
 							</span>
 						</p>
 					</div>
