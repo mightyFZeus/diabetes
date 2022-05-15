@@ -16,7 +16,7 @@ const SignIn = () => {
 				e.preventDefault();
 
 		if (email !== '' && username !== "" && password !== "" && confirmPassword !== "") {
-		navigate('/ftrness')
+		navigate('/fitness')
 		
 		} else {
 				e.preventDefault();
