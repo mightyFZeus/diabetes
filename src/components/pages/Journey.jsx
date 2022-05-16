@@ -23,7 +23,7 @@ const Journey = () => {
 
 	// time
 
-		const dailyDate  = localStorage.getItem(" dailyDate")
+	const dailyDate  = localStorage.getItem(" dailyDate")
 	const cycleDate = localStorage.getItem("cycleDate")
 	const weeklyDate = localStorage.getItem("weeklyDate")
 
@@ -105,7 +105,7 @@ const Journey = () => {
 
 	return (
 		<MainContainer bg="#F2F2F7">
-			<div className="px-6 h-screen w-full">
+			<div className="px-6 h-screen w-full mb-20">
 				<Backbutton text1='Back' text2="Skip" onClick={() =>navigate(-1)} />
 				<p className="font-black text-4xl">Start your journey</p>
 				<div className="rounded-xl w-full   px-4 py-2 flex justify-between gap-3 mt-10">
@@ -137,7 +137,7 @@ const Journey = () => {
 							<DayItem data={item} key={index} />
 						))}
 				</div>
-				<div className="mt-40 lg:mt-72">
+				<div className="mt-10 mb-20 lg:mt-20">
 					<PrimatryButton
 						text="Get Started"
 						bgColor="#00B386"

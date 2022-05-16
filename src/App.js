@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route,BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import Onboard from "./components/pages/Onboard";
 import ActionPrompt from "./components/pages/ActionPrompt";
 import SignIn from "./components/pages/SignIn";
@@ -14,47 +14,45 @@ import AddData from "./components/pages/AddData";
 import NutritionDetails from "./components/pages/NutritionDetails";
 import ChangeMeal from "./components/pages/ChangeMeal";
 import ItemAdded from "./components/pages/ItemAdded";
-import { breakFast } from './utils/data'
-import {OverProvider} from './components/Context'
-
+import { breakFast } from "./utils/data";
 
 // steps
 
-localStorage.setItem('dataArray', JSON.stringify(breakFast))
-	 localStorage.setItem("cycleSteps", '10,000')
- localStorage.setItem("weeklySteps", '10,000')
-localStorage.setItem("dailySteps", '10,000')
-    
-   //  time
+localStorage.setItem("dataArray", JSON.stringify(breakFast));
+localStorage.setItem("cycleSteps", "10,000");
+localStorage.setItem("weeklySteps", "10,000");
+localStorage.setItem("dailySteps", "10,000");
 
-   localStorage.setItem('weeklyDate', "03/02/202")
-   localStorage.setItem('cycleDate', "03/02/2022")
-   localStorage.setItem('dailyDate', "03/02/2022")
-   
+//  time
 
+localStorage.setItem("weeklyDate", "03/02/202");
+localStorage.setItem("cycleDate", "03/02/2022");
+localStorage.setItem("dailyDate", "03/02/2022");
 
 function App() {
 	return (
-      <div className="app">
-            <Router>
-        <Routes>
-           <Route path="/" element={<Onboard />} />
-           <Route path="/action" element={<ActionPrompt />} />
-           <Route path="/signin" element={<SignIn />} />
-           <Route path="/signup" element={<SignUp />} />
-           <Route path="/fitness" element={<Fitness />} />
-           <Route path="/get-started" element={<GetStarted />} />
-           <Route path="/journey" element={<Journey />} />
-           <Route path="/nutrition" element={<Nutrition />} />
-           <Route path="/nutrition-plan" element={<NutritionPlan />} />
-           <Route path="/day-details" element={<DayDetails />} />
-           <Route path="/add-data" element={<AddData />} />
-           <Route path="/nutrition-details" element={<NutritionDetails />} />
-           <Route path="/change-meal" element={<ChangeMeal />} />
-           <Route path="/item-added" element={<ItemAdded />} />
-        </Routes>
+		<div className="app">
+			<Router>
+				<Routes>
+					<Route path="/" element={<Onboard />} />
+					<Route path="/action" element={<ActionPrompt />} />
+					<Route path="/signin" element={<SignIn />} />
+					<Route path="/signup" element={<SignUp />} />
+					<Route path="/fitness" element={<Fitness />} />
+					<Route path="/get-started" element={<GetStarted />} />
+					<Route path="/journey" element={<Journey />} />
+					<Route path="/nutrition" element={<Nutrition />} />
+					<Route path="/nutrition-plan" element={<NutritionPlan />} />
+					<Route path="/day-details" element={<DayDetails />} />
+					<Route path="/add-data" element={<AddData />} />
+					<Route
+						path="/nutrition-details"
+						element={<NutritionDetails />}
+					/>
+					<Route path="/change-meal" element={<ChangeMeal />} />
+					<Route path="/item-added" element={<ItemAdded />} />
+				</Routes>
 			</Router>
-			
 		</div>
 	);
 }

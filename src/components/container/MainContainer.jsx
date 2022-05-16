@@ -3,7 +3,7 @@ import React from "react";
 const MainContainer = ({ children, bgColor }) => {
 	return (
 		<div
-			className="xl:rounded-lg h-full  mx-auto py-10 xl:max-w-6xl xl:shadow-lg xl:mx-auto xl:p-10  "
+			className="xl:rounded-lg h-full  mx-auto py-10 xl:max-w-6xl xl:shadow-lg xl:mx-auto xl:p-10 mb-20  "
 			style={{ backgroundColor: `${bgColor}` }}
 		>
 			{children}

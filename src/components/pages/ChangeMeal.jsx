@@ -18,7 +18,7 @@ const ChangeMeal = () => {
 
 	const move = () => {
 		if (click) {
-			navigate('/fitness')
+			navigate('/nutrition')
 		}
 		
 	}
@@ -82,7 +82,7 @@ const ChangeMeal = () => {
 									key={index}
 									className=" py-2 items-center flex w-full justify-between"
 								>
-									<img src={item.image} alt="ggggg" />
+									<img src={item.image} className='h-10 w-10 mr-10' alt="ggggg" />
 									<div className="">
 										<p className="font-semibold text-md mb-2">
 											{item.mealName}

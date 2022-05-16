@@ -5,12 +5,21 @@ import avocado from "../images/avocado.png";
 import bread from "../images/bread.png";
 import cup2 from "../images/cup2.png";
 import bolo from "../images/bolo.png";
-import sand from "../images/sand.png";
 import beans from "../images/beans.png";
 import sausage from "../images/sausage.png";
 import wich from "../images/wich.png";
 import salad from "../images/salad.png";
 import oat from "../images/oat.png";
+import banana from "../images/banana.png";
+import rice from "../images/rice.png";
+import oat3 from "../images/oat3.png";
+import cookie1 from "../images/cookie1.png";
+import cookie2 from "../images/cookie2.png";
+import toh from "../images/toh.png";
+
+
+
+
 
 export const nutritionData = [
 	{
@@ -68,7 +77,7 @@ export const lunch = {
 			mealName: "Chickpea and tuna salad",
 			kcal: "130",
 			grams: "10",
-			image: sand,
+			image: toh,
 		},
 		{
 			id: 2,
@@ -116,12 +125,47 @@ export const dinner = {
 
 export const searchResult = [
 		{
-			id: 3,
-			mealName: "Healthy Sandwich ",
-			kcal: 120,
-			grams: 15,
+			id: 1,
+			mealName: "Oatmeal ",
+			kcal: "145 cals",
+			grams: "1 cup of cooked",
 			image: wich,
-		}
+	},
+	{
+			id: 2,
+			mealName: "Oatmeal",
+			kcal: "97cals",
+			grams: "1 packet(20g)",
+			image: rice,
+		},
+	{
+			id: 5,
+			mealName: "Oatmeal with milk",
+			kcal: "380 cals",
+			grams: "100 g",
+			image: oat3,
+		},
+	{
+			id: 4,
+			mealName: "Oatmeal Chocolate cookies",
+			kcal: "112cals",
+			grams: " 1 big",
+			image: cookie1,
+		},
+	{
+			id: 5,
+			mealName: "Oatmeal Rasin cookies",
+			kcal: "90cals",
+			grams: " 1 small",
+			image: cookie2,
+		},
+	{
+			id: 6,
+			mealName: "Oatmeal with banana",
+			kcal: "166cals",
+			grams: " 1 cup",
+			image: banana,
+		},
 ];
 
 
