@@ -82,8 +82,8 @@ const AddData = () => {
 								item.item.data.id === 1
 									? "Steps"
 									: item.item.data.id === 2
-									? "Cycling"
-									: "Running"
+									? "Miles"
+									: "Kilometers"
 							}
 						/>
 					</div>
